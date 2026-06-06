@@ -1,0 +1,434 @@
+
+<!DOCTYPE html>
+    <html lang="it" data-theme="dark">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/favicon.ico">
+        <title>Dennis Benco | Configurazione personale di i3-wm su Arch Linux</title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css?version=62">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="https://www.dennisbenco.com">
+                <svg data-id="lg_D0ePTP1NPfH4ExdcKZ" data-version="1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" viewBox="566.520751953125 4.381487846374512 685.6849365234375 422.236572265625" width="120" height="74.05px">
+                    <g data-padding="20">
+                        <g transform="matrix(.97934 0 0 .97934 10 4.452)">
+                            <path class="fgSvg" d="M811.936 131.82q.79 3.2.79 7.99 0 4.6-.79 7.99.79 3.2.79 7.99 0 4.6-.79 7.99h-8q.8 3.2.8 8 0 4.59-.8 7.99h-7.99q.8 3.19.8 7.99 0 4.59-.8 7.99h-47.94q-.8-3.4-.8-7.99 0-4.8.8-7.99-.8-3.4-.8-7.99 0-4.8.8-8-.8-3.39-.8-7.99 0-4.79.8-7.99-.8-3.39-.8-7.99 0-4.79.8-7.99-.8-3.39-.8-7.99 0-4.79.8-7.99-.8-3.39-.8-7.99 0-4.79.8-7.99-.8-3.39-.8-7.99 0-4.79.8-7.99h47.94q.8 3.2.8 7.99 0 4.6-.8 7.99h7.99q.8 3.2.8 7.99 0 4.6-.8 7.99h8q.79 3.2.79 7.99 0 4.6-.79 7.99m-15.99 31.96q-.79-3.39-.79-7.99 0-4.79.79-7.99-.79-3.39-.79-7.99 0-4.79.79-7.99-.79-3.39-.79-7.99 0-4.79.79-7.99h-7.99q-.79-3.39-.79-7.99 0-4.79.79-7.99h-23.97q.8 3.2.8 7.99 0 4.6-.8 7.99.8 3.2.8 7.99 0 4.6-.8 7.99.8 3.2.8 7.99 0 4.6-.8 7.99.8 3.2.8 7.99 0 4.6-.8 7.99.8 3.2.8 8 0 4.59-.8 7.99h23.97q-.79-3.4-.79-7.99 0-4.8.79-8Zm96.69-23.97q0 4.6-.8 7.99.8 3.2.8 7.99 0 4.6-.8 7.99h-41.95q.8 3.2.8 8 0 4.59-.8 7.99h33.96q.8 3.19.8 7.99 0 4.59-.8 7.99h-39.95q-.8-3.4-.8-7.99 0-4.8.8-7.99h-9.99q-.8-3.4-.8-7.99 0-4.8.8-8h-5.99q-.8-3.39-.8-7.99 0-4.79.8-7.99h5.99q-.8-3.39-.8-7.99 0-4.79.8-7.99h9.99q-.8-3.39-.8-7.99 0-4.79.8-7.99h39.95q.8 3.2.8 7.99 0 4.6-.8 7.99h7.99q.8 3.2.8 7.99m-16.78 7.99q-.8-3.39-.8-7.99 0-4.79.8-7.99h-25.97q.8 3.2.8 7.99 0 4.6-.8 7.99Zm46.74-23.97q0 4.6-.8 7.99h7.99q.8 3.2.8 7.99 0 4.6-.8 7.99h-5.99q.8 3.2.8 7.99 0 4.6-.8 7.99.8 3.2.8 8 0 4.59-.8 7.99.8 3.19.8 7.99 0 4.59-.8 7.99h-15.98q-.8-3.4-.8-7.99 0-4.8.8-7.99-.8-3.4-.8-7.99 0-4.8.8-8-.8-3.39-.8-7.99 0-4.79.8-7.99-.8-3.39-.8-7.99 0-4.79.8-7.99-.8-3.39-.8-7.99 0-4.79.8-7.99h13.98q.8 3.2.8 7.99m49.14 23.97q.8 3.2.8 7.99 0 4.6-.8 7.99.8 3.2.8 8 0 4.59-.8 7.99.8 3.19.8 7.99 0 4.59-.8 7.99h-15.98q-.8-3.4-.8-7.99 0-4.8.8-7.99-.8-3.4-.8-7.99 0-4.8.8-8-.8-3.39-.8-7.99 0-4.79.8-7.99-.8-3.39-.8-7.99 0-4.79.8-7.99h-25.97q-.8-3.39-.8-7.99 0-4.79.8-7.99h31.96q.8 3.2.8 7.99 0 4.6-.8 7.99h9.99q.8 3.2.8 7.99 0 4.6-.8 7.99m30.77-23.97q0 4.6-.8 7.99h7.99q.8 3.2.8 7.99 0 4.6-.8 7.99h-6q.8 3.2.8 7.99 0 4.6-.8 7.99.8 3.2.8 8 0 4.59-.8 7.99.8 3.19.8 7.99 0 4.59-.8 7.99h-15.98q-.8-3.4-.8-7.99 0-4.8.8-7.99-.8-3.4-.8-7.99 0-4.8.8-8-.8-3.39-.8-7.99 0-4.79.8-7.99-.8-3.39-.8-7.99 0-4.79.8-7.99-.8-3.39-.8-7.99 0-4.79.8-7.99h13.99q.8 3.2.8 7.99m49.14 23.97q.8 3.2.8 7.99 0 4.6-.8 7.99.8 3.2.8 8 0 4.59-.8 7.99.8 3.19.8 7.99 0 4.59-.8 7.99h-15.98q-.8-3.4-.8-7.99 0-4.8.8-7.99-.8-3.4-.8-7.99 0-4.8.8-8-.8-3.39-.8-7.99 0-4.79.8-7.99-.8-3.39-.8-7.99 0-4.79.8-7.99h-25.97q-.8-3.39-.8-7.99 0-4.79.8-7.99h31.96q.8 3.2.8 7.99 0 4.6-.8 7.99h9.99q.8 3.2.8 7.99 0 4.6-.8 7.99m55.93-47.94h-15.98q-.8-3.39-.8-7.99 0-4.79.8-7.99h15.98q.8 3.2.8 7.99 0 4.6-.8 7.99m15.98 79.91q.8 3.19.8 7.99 0 4.59-.8 7.99h-47.94q-.8-3.4-.8-7.99 0-4.8.8-7.99h15.98q-.8-3.4-.8-7.99 0-4.8.8-8-.8-3.39-.8-7.99 0-4.79.8-7.99-.8-3.39-.8-7.99 0-4.79.8-7.99h-11.99q-.8-3.39-.8-7.99 0-4.79.8-7.99h27.97q.8 3.2.8 7.99 0 4.6-.8 7.99.8 3.2.8 7.99 0 4.6-.8 7.99.8 3.2.8 7.99 0 4.6-.8 7.99.8 3.2.8 8 0 4.59-.8 7.99Zm84.71-7.99q0 4.59-.8 7.99h-7.99q.8 3.19.8 7.99 0 4.59-.8 7.99h-43.95q-.8-3.4-.8-7.99 0-4.8.8-7.99h35.96q-.8-3.4-.8-7.99 0-4.8.8-8h-31.96q-.8-3.39-.8-7.99 0-4.79.8-7.99h-7.99q-.8-3.39-.8-7.99 0-4.79.8-7.99h7.99q-.8-3.39-.8-7.99 0-4.79.8-7.99h43.94q.8 3.2.8 7.99 0 4.6-.8 7.99h-35.95q.8 3.2.8 7.99 0 4.6-.8 7.99h31.96q.8 3.2.8 7.99 0 4.6-.8 7.99h7.99q.8 3.2.8 8M847.526 288.6q0 4.6-.79 7.99h-8q.8 3.2.8 7.99 0 4.6-.8 8h8q.79 3.19.79 7.99 0 4.59-.79 7.99.79 3.19.79 7.99 0 4.59-.79 7.99h-8q.8 3.19.8 7.99 0 4.59-.8 7.99h-55.93q-.8-3.4-.8-7.99 0-4.8.8-7.99-.8-3.4-.8-7.99 0-4.8.8-7.99-.8-3.4-.8-7.99 0-4.8.8-7.99-.8-3.4-.8-8 0-4.79.8-7.99-.8-3.39-.8-7.99 0-4.79.8-7.99-.8-3.39-.8-7.99 0-4.79.8-7.99-.8-3.39-.8-7.99 0-4.79.8-7.99h55.93q.8 3.2.8 7.99 0 4.6-.8 7.99h8q.79 3.2.79 7.99 0 4.6-.79 7.99.79 3.2.79 7.99m-16.78 7.99q-.79-3.39-.79-7.99 0-4.79.79-7.99-.79-3.39-.79-7.99 0-4.79.79-7.99h-31.96q.8 3.2.8 7.99 0 4.6-.8 7.99.8 3.2.8 7.99 0 4.6-.8 7.99Zm0 31.97q-.79-3.4-.79-7.99 0-4.8.79-7.99h-31.96q.8 3.19.8 7.99 0 4.59-.8 7.99.8 3.19.8 7.99 0 4.59-.8 7.99h31.96q-.79-3.4-.79-7.99 0-4.8.79-7.99m96.69-23.97q0 4.6-.8 8 .8 3.19.8 7.99 0 4.59-.8 7.99h-41.95q.8 3.19.8 7.99 0 4.59-.8 7.99h33.96q.8 3.19.8 7.99 0 4.59-.8 7.99h-39.95q-.8-3.4-.8-7.99 0-4.8.8-7.99h-9.99q-.8-3.4-.8-7.99 0-4.8.8-7.99h-5.99q-.8-3.4-.8-7.99 0-4.8.8-7.99h5.99q-.8-3.4-.8-8 0-4.79.8-7.99h9.99q-.8-3.39-.8-7.99 0-4.79.8-7.99h39.95q.8 3.2.8 7.99 0 4.6-.8 7.99h7.99q.8 3.2.8 7.99m-16.78 8q-.8-3.4-.8-8 0-4.79.8-7.99h-25.97q.8 3.2.8 7.99 0 4.6-.8 8Zm46.74-23.98q0 4.6-.8 7.99h7.99q.8 3.2.8 7.99 0 4.6-.8 8h-5.99q.8 3.19.8 7.99 0 4.59-.8 7.99.8 3.19.8 7.99 0 4.59-.8 7.99.8 3.19.8 7.99 0 4.59-.8 7.99h-15.98q-.8-3.4-.8-7.99 0-4.8.8-7.99-.8-3.4-.8-7.99 0-4.8.8-7.99-.8-3.4-.8-7.99 0-4.8.8-7.99-.8-3.4-.8-8 0-4.79.8-7.99-.8-3.39-.8-7.99 0-4.79.8-7.99h13.98q.8 3.2.8 7.99m49.14 23.98q.8 3.19.8 7.99 0 4.59-.8 7.99.8 3.19.8 7.99 0 4.59-.8 7.99.8 3.19.8 7.99 0 4.59-.8 7.99h-15.98q-.8-3.4-.8-7.99 0-4.8.8-7.99-.8-3.4-.8-7.99 0-4.8.8-7.99-.8-3.4-.8-7.99 0-4.8.8-7.99-.8-3.4-.8-8 0-4.79.8-7.99h-25.97q-.8-3.39-.8-7.99 0-4.79.8-7.99h31.96q.8 3.2.8 7.99 0 4.6-.8 7.99h9.99q.8 3.2.8 7.99 0 4.6-.8 8m63.93 15.98h15.98q.8 3.19.8 7.99 0 4.59-.8 7.99h-7.99q.79 3.19.79 7.99 0 4.59-.79 7.99h-39.96q-.8-3.4-.8-7.99 0-4.8.8-7.99h-7.99q-.8-3.4-.8-7.99 0-4.8.8-7.99h-7.99q-.8-3.4-.8-7.99 0-4.8.8-7.99h7.99q-.8-3.4-.8-8 0-4.79.8-7.99h7.99q-.8-3.39-.8-7.99 0-4.79.8-7.99h39.96q.79 3.2.79 7.99 0 4.6-.79 7.99h7.99q.8 3.2.8 7.99 0 4.6-.8 8h-15.98q-.8-3.4-.8-8 0-4.79.8-7.99h-23.98q.8 3.2.8 7.99 0 4.6-.8 8h-7.99q.8 3.19.8 7.99 0 4.59-.8 7.99h7.99q.8 3.19.8 7.99 0 4.59-.8 7.99h23.98q-.8-3.4-.8-7.99 0-4.8.8-7.99m96.68-7.99q0 4.59-.8 7.99h-5.99q.8 3.19.8 7.99 0 4.59-.8 7.99h-9.99q.8 3.19.8 7.99 0 4.59-.8 7.99h-31.96q-.8-3.4-.8-7.99 0-4.8.8-7.99h-9.99q-.8-3.4-.8-7.99 0-4.8.8-7.99h-5.99q-.8-3.4-.8-7.99 0-4.8.8-7.99h5.99q-.8-3.4-.8-8 0-4.79.8-7.99h9.99q-.8-3.39-.8-7.99 0-4.79.8-7.99h31.96q.8 3.2.8 7.99 0 4.6-.8 7.99h9.99q.8 3.2.8 7.99 0 4.6-.8 8h5.99q.8 3.19.8 7.99m-22.77 7.99h5.99q-.8-3.4-.8-7.99 0-4.8.8-7.99h-5.99q-.8-3.4-.8-8 0-4.79.8-7.99h-19.98q.8 3.2.8 7.99 0 4.6-.8 8h-5.99q.8 3.19.8 7.99 0 4.59-.8 7.99h5.99q.8 3.19.8 7.99 0 4.59-.8 7.99h19.98q-.8-3.4-.8-7.99 0-4.8.8-7.99" fill="#fff"/>
+                            <path class="fgSvg" d="M1268.411 84.215V-.072h-700.15v431.144h700.15v-84.287h-11.4v77.267h-677.35V6.948h677.35v77.267Z" fill="#fff"/>
+                        </g>
+                    </g>
+                </svg>
+            </a>
+        </div>
+        <nav>
+            <ul id="MenuItems" style="margin-right: 25px;">
+                <li><a href="https://www.dennisbenco.com">Home</a></li>
+                <li><a href="https://www.dennisbenco.com/lista-progetti">Progetti</a></li>
+                <li><a href="https://www.dennisbenco.com/chi-sono">Chi sono</a></li>
+                <li><a href="https://www.dennisbenco.com/contatti">Contatti</a></li>
+            </ul>
+        </nav>
+        <button id="data-theme-toggle" type="button" aria-label="Change to light theme"></button>
+        <svg class="menu-icon" style="min-width: 28px; min-height: 28px;" onclick="menutoggle()" viewBox="3 3 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="fgSvg" d="M4 18L20 18" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+            <path class="fgSvg" d="M4 12L20 12" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+            <path class="fgSvg" d="M4 6L20 6" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+    </div>
+
+    <div class="centered">
+        <div class="container">
+            <h1 class="proj-h1">Configurazione personale di i3-wm su Arch Linux</h1>
+            <div class="row proj">
+                <div class="col-2 proj-img">
+                    <img src="../images/i3-wm.png" alt="Screenshot">
+                </div>
+                <div class="col-2 proj-info">
+                    <p>
+                        Questa è una configurazione minimalista e senza distrazioni
+                        che riesce a mantenere la stessa efficienza di un desktop environment
+                        classico, grazie alle numerose scorciatoie di disponibili.
+                        <br><br>
+                        Come terminale uso Alacritty, e per abilitare la trasparenza
+                        utilizzo Picom come compositore Xorg.<br>
+                        Come shell invece uso zsh abbinato ad omzsh, e powerlevel10k come tema.
+                    </p>
+                </div>
+            </div>
+            <hr class="separatore">
+            <div class="text">
+                <p>
+                    Configurazione i3:
+                    <hr style="color: #111; border: none;">
+                    <button type="button" class="collapsible">Clicca per espandere</button>
+                    <snippet class="collapsible-content">
+                        $ nano ~/.config/i3/config
+                        <hr>
+                        set $mod Mod4<br>
+                        <br>
+                        # Cursor warp fix<br>
+                        mouse_warping none<br>
+                        <br>
+                        # No screensaver<br>
+                        exec_always --no-startup-id xset s off<br>
+                        exec_always --no-startup-id xset -dpms<br>
+                        <br>
+                        # Brightness (laptop)<br>
+                        bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +2%<br>
+                        bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 2%-<br>
+                        <br>
+                        # Bluetooth<br>
+                        exec --no-startup-id blueman-applet<br>
+                        <br>
+                        # Gaps<br>
+                        gaps inner 4<br>
+                        gaps outer 1<br>
+                        <br>
+                        # Numlock on<br>
+                        exec_always --no-startup-id numlockx on<br>
+                        <br>
+                        # Wallpaper<br>
+                        exec_always --no-startup-id feh --bg-scale /home/dennis/Immagini/Sfondi/black.png<br>
+                        <br>
+                        # Borders<br>
+                        default_border normal<br>
+                        default_floating_border normal<br>
+                        <br>
+                        # Program shortcuts<br>
+                        bindsym $mod+b exec --no-startup-id firefox<br>
+                        bindsym $mod+c exec --no-startup-id code<br>
+                        bindsym $mod+n exec --no-startup-id thunar<br>
+                        <br>
+                        # Keyboard layout (IT, RU)<br>
+                        exec_always --no-startup-id "setxkbmap -layout it,ru -variant , -option grp:ctrl_alt_toggle"<br>
+                        <br>
+                        # Font for window titles. Will also be used by the bar unless a different font<br>
+                        # is used in the bar {} block below.<br>
+                        font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1<br>
+                        font pango:DejaVu Sans Mono 12px<br>
+                        <br>
+                        exec --no-startup-id dex --autostart --environment i3<br>
+                        exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork<br>
+                        exec --no-startup-id nm-applet<br>
+                        <br>
+                        # Use pactl to adjust volume in PulseAudio.<br>
+                        set $refresh_i3status killall -SIGUSR1 i3status<br>
+                        bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && $refresh_i3status<br>
+                        bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && $refresh_i3status<br>
+                        bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status<br>
+                        bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status<br>
+                        <br>
+                        # Use Mouse+$mod to drag floating windows to their wanted position<br>
+                        floating_modifier $mod<br>
+                        <br>
+                        # move tiling windows via drag & drop by left-clicking into the title bar,<br>
+                        # or left-clicking anywhere into the window while holding the floating modifier.<br>
+                        tiling_drag modifier titlebar<br>
+                        <br>
+                        # start a terminal<br>
+                        bindsym $mod+Return exec --no-startup-id alacritty<br>
+                        <br>
+                        # kill focused window<br>
+                        bindsym $mod+Shift+q kill<br>
+                        <br>
+                        # start dmenu (a program launcher)<br>
+                        bindsym $mod+d exec --no-startup-id dmenu_run<br>
+                        <br>
+                        # change focus<br>
+                        bindsym $mod+j focus left<br>
+                        bindsym $mod+k focus down<br>
+                        bindsym $mod+l focus up<br>
+                        bindsym $mod+ograve focus right<br>
+                        <br>
+                        # alternatively, you can use the cursor keys:<br>
+                        bindsym $mod+Left focus left<br>
+                        bindsym $mod+Down focus down<br>
+                        bindsym $mod+Up focus up<br>
+                        bindsym $mod+Right focus right<br>
+                        <br>
+                        # move focused window<br>
+                        bindsym $mod+Shift+j move left<br>
+                        bindsym $mod+Shift+k move down<br>
+                        bindsym $mod+Shift+l move up<br>
+                        bindsym $mod+Shift+ograve move right<br>
+                        <br>
+                        # alternatively, you can use the cursor keys:<br>
+                        bindsym $mod+Shift+Left move left<br>
+                        bindsym $mod+Shift+Down move down<br>
+                        bindsym $mod+Shift+Up move up<br>
+                        bindsym $mod+Shift+Right move right<br>
+                        <br>
+                        # split in horizontal orientation<br>
+                        bindsym $mod+h split h<br>
+                        <br>
+                        # split in vertical orientation<br>
+                        bindsym $mod+v split v<br>
+                        <br>
+                        # enter fullscreen mode for the focused container<br>
+                        bindsym $mod+f fullscreen toggle<br>
+                        <br>
+                        # change container layout (stacked, tabbed, toggle split)<br>
+                        bindsym $mod+s layout stacking<br>
+                        bindsym $mod+w layout tabbed<br>
+                        bindsym $mod+e layout toggle split<br>
+                        <br>
+                        # toggle tiling / floating<br>
+                        bindsym $mod+Shift+space floating toggle<br>
+                        <br>
+                        # change focus between tiling / floating windows<br>
+                        bindsym $mod+space focus mode_toggle<br>
+                        <br>
+                        # focus the parent container<br>
+                        bindsym $mod+a focus parent<br>
+                        <br>
+                        # focus the child container<br>
+                        #bindsym $mod+d focus child<br>
+                        <br>
+                        # Define names for default workspaces for which we configure key bindings later on.<br>
+                        # We use variables to avoid repeating the names in multiple places.<br>
+                        set $ws1 "1"<br>
+                        set $ws2 "2"<br>
+                        set $ws3 "3"<br>
+                        set $ws4 "4"<br>
+                        set $ws5 "5"<br>
+                        set $ws6 "6"<br>
+                        set $ws7 "7"<br>
+                        set $ws8 "8"<br>
+                        set $ws9 "9"<br>
+                        set $ws10 "10"<br>
+                        <br>
+                        # switch to workspace<br>
+                        bindsym $mod+1 workspace number $ws1<br>
+                        bindsym $mod+2 workspace number $ws2<br>
+                        bindsym $mod+3 workspace number $ws3<br>
+                        bindsym $mod+4 workspace number $ws4<br>
+                        bindsym $mod+5 workspace number $ws5<br>
+                        bindsym $mod+6 workspace number $ws6<br>
+                        bindsym $mod+7 workspace number $ws7<br>
+                        bindsym $mod+8 workspace number $ws8<br>
+                        bindsym $mod+9 workspace number $ws9<br>
+                        bindsym $mod+0 workspace number $ws10<br>
+                        <br>
+                        # move focused container to workspace<br>
+                        bindsym $mod+Shift+1 move container to workspace number $ws1<br>
+                        bindsym $mod+Shift+2 move container to workspace number $ws2<br>
+                        bindsym $mod+Shift+3 move container to workspace number $ws3<br>
+                        bindsym $mod+Shift+4 move container to workspace number $ws4<br>
+                        bindsym $mod+Shift+5 move container to workspace number $ws5<br>
+                        bindsym $mod+Shift+6 move container to workspace number $ws6<br>
+                        bindsym $mod+Shift+7 move container to workspace number $ws7<br>
+                        bindsym $mod+Shift+8 move container to workspace number $ws8<br>
+                        bindsym $mod+Shift+9 move container to workspace number $ws9<br>
+                        bindsym $mod+Shift+0 move container to workspace number $ws10<br>
+                        <br>
+                        # reload the configuration file<br>
+                        bindsym $mod+Shift+c reload<br>
+                        # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)<br>
+                        bindsym $mod+Shift+r restart<br>
+                        # exit i3 (logs you out of your X session)<br>
+                        bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"<br>
+                        <br>
+                        # resize window (you can also use the mouse for that)<br>
+                        mode "resize" {<br>
+                            &emsp;        # These bindings trigger as soon as you enter the resize mode<br>
+                            &emsp;        <br>
+                            &emsp;        # Pressing left will shrink the window’s width.<br>
+                            &emsp;        # Pressing right will grow the window’s width.<br>
+                            &emsp;    # Pressing up will shrink the window’s height.<br>
+                            &emsp;    # Pressing down will grow the window’s height.<br>
+                            &emsp;    bindsym j resize shrink width 10 px or 10 ppt<br>
+                            &emsp;    bindsym k resize grow height 10 px or 10 ppt<br>
+                            &emsp;    bindsym l resize shrink height 10 px or 10 ppt<br>
+                            &emsp;    bindsym ograve resize grow width 10 px or 10 ppt<br>
+                            &emsp;    <br>
+                            &emsp;    # same bindings, but for the arrow keys<br>
+                            &emsp;    bindsym Left resize shrink width 10 px or 10 ppt<br>
+                            &emsp;    bindsym Down resize grow height 10 px or 10 ppt<br>
+                            &emsp;    bindsym Up resize shrink height 10 px or 10 ppt<br>
+                            &emsp;    bindsym Right resize grow width 10 px or 10 ppt<br>
+                            &emsp;    <br>
+                            &emsp;    # back to normal: Enter or Escape or $mod+r<br>
+                            &emsp;    bindsym Return mode "default"<br>
+                            &emsp;    bindsym Escape mode "default"<br>
+                            &emsp;    bindsym $mod+r mode "default"<br>
+                        }<br>
+                        <br>
+                        bindsym $mod+r mode "resize"<br>
+                        <br>
+                        # Floatings<br>
+                        for_window [window_role="About"] floating enable<br>
+                        for_window [window_role="task_dialog|bubble|page-info|Preferences|pop-up"] floating enable<br>
+                        for_window [window_role="Open Files"] floating enable sticky<br>
+                        for_window [window_type="dialog"] floating enable<br>
+                        for_window [window_type="menu"] floating enable<br>
+                        <br>
+                        # Sticky windows<br>
+                        for_window [instance="file_progress"] sticky enable<br>
+                        for_window [class="info|Mate-color-select|gcolor2|timesup|QtPass|GtkFileChooserDialog"] sticky enable<br>
+                        <br>
+                        # Window focus settings<br>
+                        no_focus [window_role="pop-up"]<br>
+                        <br>
+                        # Shutdown, Reboot, Lock Screen and Logout<br>
+                        mode "power" {<br>
+                            &emsp;    bindsym q exec systemctl poweroff<br>
+                            &emsp;    bindsym r exec systemctl reboot<br>
+                            &emsp;    bindsym l exec --no-startup-id i3lock --color=000000, mode "default"<br>
+                            &emsp;    bindsym o exec --no-startup-id i3-msg exit, mode "default"<br>
+                            &emsp;    bindsym h exec --no-startup-id i3lock --color=000000 && systemctl hibernate, mode "default"<br>
+                            &emsp;    bindsym s exec --no-startup-id i3lock --color=000000 && systemctl suspend, mode "default"<br>
+                            &emsp;    bindsym Return mode "default"<br>
+                            &emsp;    bindsym Escape mode "default"<br>
+                            &emsp;    bindsym $mod+backslash mode "default"<br>
+                        }<br>
+                        bindsym $mod+backslash mode "power"<br>
+                        <br>
+                        # class                 border  backgr. text    indicator child_border<br>
+                        client.focused          #333333 #333333 #ffffff #333333   #333333<br>
+                        client.focused_inactive #333333 #5f676a #ffffff #333333   #222222<br>
+                        client.unfocused        #333333 #222222 #888888 #333333   #222222<br>
+                        client.urgent           #333333 #900000 #ffffff #900000   #900000<br>
+                        client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c<br>
+                        <br>
+                        client.background       #ffffff<br>
+                        <br>
+                        # Start i3bar to display a workspace bar (plus the system information i3status<br>
+                        # finds out, if available)<br>
+                        bar {<br>
+                            &emsp;    font pango:DejaVu Sans Mono 11px<br>
+                            &emsp;    colors {<br>
+                                &emsp;&emsp;        background #0b0c0d<br>
+                                &emsp;&emsp;        statusline #eeeeee<br>
+                                &emsp;&emsp;        focused_workspace #373b41 #707880 #000000<br>
+                                &emsp;    }<br>
+                                &emsp;    status_command i3status<br>
+                                &emsp;    separator_symbol " | "<br>
+                                &emsp;    tray_output primary<br>
+                                &emsp;    position top<br>
+                        }<br>
+                        <br>
+                        # Picom<br>
+                        exec_always --no-startup-id picom &<br>
+                    </snippet>
+                    Configurazione i3status:
+                    <hr style="color: #111; border: none;">
+                    <button type="button" class="collapsible">Clicca per espandere</button>
+                    <snippet class="collapsible-content">
+                        $ nano ~/.config/i3status/config
+                        <hr>
+                        general {<br>
+                            &emsp;    colors = false<br>
+                            &emsp;    interval = 1<br>
+                        }<br>
+                        <br>
+                        order += "volume master"<br>
+                        order += "disk /"<br>
+                        order += "memory"<br>
+                        order += "battery all"<br>
+                        order += "tztime local"<br>
+                        <br>
+                        volume master {<br>
+                            &emsp;        format = "[ 🔊 %volume"<br>
+                            &emsp;        format_muted = "[ 🔈 %volume"<br>
+                            &emsp;        device = "pulse"<br>
+                        }<br>
+                        <br>
+                        battery all {<br>
+                            &emsp;        format = "🔋 %percentage %status"<br>
+                            &emsp;        status_bat = ""<br>
+                            &emsp;        status_full = ""<br>
+                            &emsp;        status_idle = ""<br>
+                            &emsp;        status_chr = "⚡"<br>
+                            &emsp;        status_unk = "?"<br>
+                            &emsp;        path = "/sys/class/power_supply/BAT%d/uevent"<br>
+                            &emsp;        last_full_capacity = true<br>
+                            &emsp;        integer_battery_capacity = true<br>
+                        }<br>
+                        <br>
+                        disk "/" {
+                            &emsp;        prefix_type = custom<br>
+                            &emsp;        format = "🖴 %used"<br>
+                        }<br>
+                        <br>
+                        #disk "/home" {<br>
+                        #	prefix_type = custom<br>
+                        #        format = "/: %used / %total"<br>
+                        #}<br>
+                        <br>
+                        memory {<br>
+                            &emsp;            format = "  %used"<br>
+                            &emsp;            #threshold_degraded = "1G"<br>
+                            &emsp;            #format_degraded = "MEMORY < %available"<br>
+                        }<br>
+                        <br>
+                        tztime local {<br>
+                            &emsp;        timezone = "Europe/Rome"<br>
+                            &emsp;        format = "📅 %d/%m    %H:%M ]   "<br>
+                        }<br>
+                    </snippet>
+                    Configurazione alacritty:
+                    <hr style="color: #111; border: none;">
+                    <button type="button" class="collapsible">Clicca per espandere</button>
+                    <snippet class="collapsible-content">
+                        $ nano ~/.config/alacritty/alacritty.toml
+                        <hr>
+                        [window]<br>
+                        opacity = 0.6<br>
+                        <br>
+                        padding.x = 11<br>
+                        padding.y = 11<br>
+                        <br>
+                        decorations = "Buttonless"<br>
+                        <br>
+                        [font]<br>
+                        normal = { family = "DejaVu Sans Mono", style = "Regular" }<br>
+                        bold = { family = "DejaVu Sans Mono", style = "Bold" }<br>
+                        italic = { family = "DejaVu Sans Mono", style = "Italic" }<br>
+                        bold_italic = { family = "DejaVu Sans Mono", style = "Bold Italic" }<br>
+                        size = 9<br>
+                        <br>
+                        [general]<br>
+                        import = [<br>
+                            &emsp;    "/home/dennis/.config/alacritty/themes/themes/xterm.toml"<br>
+                        ]<br>
+                        <br>
+                        [terminal]<br>
+                        <br>
+                        [terminal.shell]<br>
+                        program = "/bin/zsh"<br>
+                        args = ["-1"]<br>
+                        <br>
+                        [cursor]<br>
+                        blink_interval = 650<br>
+                        blink_timeout = 0<br>
+                    </snippet>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="../js/collapsibleDiv.js"></script>
+
+    <div class="footer">
+        <hr>
+        <p>© www.dennisbenco.com, 2024-2026.
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="273.5199890136719 287.3500061035156 540 540" xml:space="preserve" align="middle">
+                <path style="stroke:#fff;stroke-opacity:0;stroke-width:1;stroke-dasharray:none;stroke-linecap:butt;stroke-dashoffset:0;stroke-linejoin:miter;stroke-miterlimit:4;fill:transparent;fill-rule:nonzero;opacity:1" vector-effect="non-scaling-stroke" transform="matrix(.27 0 0 .36 273.52 287.35)" d="M0 0h2000v1500H0z"/>
+                <path class="fgSvg" style="stroke:none;stroke-width:1;stroke-dasharray:none;stroke-linecap:butt;stroke-dashoffset:0;stroke-linejoin:miter;stroke-miterlimit:4;fill-rule:nonzero;opacity:1" vector-effect="non-scaling-stroke" transform="matrix(.69 0 0 .69 -148.148 21.495)" d="M969.998 751.138q3.24 12.94 3.24 32.36 0 18.6-3.24 32.36 3.24 12.94 3.24 32.36 0 18.6-3.24 32.36h-32.36q3.24 12.94 3.24 32.36 0 18.6-3.24 32.36h-32.36q3.24 12.94 3.24 32.36 0 18.6-3.24 32.36h-194.16q-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36h194.16q3.24 12.94 3.24 32.36 0 18.6-3.24 32.36h32.36q3.24 12.94 3.24 32.36 0 18.6-3.24 32.36h32.36q3.24 12.94 3.24 32.36 0 18.6-3.24 32.36m-64.72 129.44q-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36h-32.36q-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36h-97.08q3.24 12.94 3.24 32.36 0 18.6-3.24 32.36 3.24 12.94 3.24 32.36 0 18.6-3.24 32.36 3.24 12.94 3.24 32.36 0 18.6-3.24 32.36 3.24 12.94 3.24 32.36 0 18.6-3.24 32.36 3.24 12.94 3.24 32.36 0 18.6-3.24 32.36h97.08q-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36Zm391.56-161.8q0 18.6-3.24 32.36h-32.36q3.24 12.94 3.24 32.36 0 18.6-3.24 32.36h32.36q3.24 12.94 3.24 32.36 0 18.6-3.24 32.36 3.24 12.94 3.24 32.36 0 18.6-3.24 32.36h-32.36q3.24 12.94 3.24 32.36 0 18.6-3.24 32.36h-226.52q-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36h226.52q3.24 12.94 3.24 32.36 0 18.6-3.24 32.36h32.36q3.24 12.94 3.24 32.36 0 18.6-3.24 32.36 3.24 12.94 3.24 32.36m-67.96 32.36q-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36h-129.44q3.24 12.94 3.24 32.36 0 18.6-3.24 32.36 3.24 12.94 3.24 32.36 0 18.6-3.24 32.36Zm0 129.44q-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36h-129.44q3.24 12.94 3.24 32.36 0 18.6-3.24 32.36 3.24 12.94 3.24 32.36 0 18.6-3.24 32.36h129.44q-3.24-13.76-3.24-32.36 0-19.42 3.24-32.36" fill="#fff"/>
+                <path class="fgSvg" style="stroke-width:1;stroke-dasharray:none;stroke-linecap:butt;stroke-dashoffset:0;stroke-linejoin:miter;stroke-miterlimit:4;fill-rule:nonzero;opacity:1" vector-effect="non-scaling-stroke" transform="matrix(.69 0 0 .69 -147.828 22.162)" d="M1369.016 551.321v-143.36H635.7v733.315h733.315v-143.36h-11.94v131.42H647.64V419.901h709.435v131.42Z" fill="#fff"/>
+            </svg>Pubblicato sotto licenza MIT.
+        </p>
+    </div>
+
+    <script src="/js/toggleMenu.js"></script>
+    <script src="/js/toggleTheme.js"></script>
+    
+    </body>
+</html>
